@@ -1,63 +1,54 @@
 <?php
-include './DB_Conn.php';
-?>
+include './action/dbconnection.php';
 
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+$keyword = "";
+if (isset($_GET['keyword'])) {
+    $keyword = $_GET['keyword'];
+}
+?>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Search Products</title>
-        <?php 
-        $keyword = "";
-        if(isset($_GET['keyword'])){
-            $keyword = $_GET['keyword']; 
-            ?>
-                  <h3>Search result for : <?php echo $keyword;?></h3>
-                <?php 
-        }
-        ?>
+        <title></title>
     </head>
     <body>
-        <div align="center">
-            <form method="get" action="searchProducts.php" />
-            Search : <input type="text" name="keyword" id="keyword" /> 
-            <input type="submit" value="Search" name="search" />
-        </form>
-        <br>
-        <table> 
-            <?php 
-            $query = "SELECT * FROM products where product_name like '%".$keyword."%'";
-            $result = $connection->query($query);
-            while($row = $result->fetch_assoc()){
-            ?>
+        <?php
+        include './includes/header.php';
+        ?>
+          <div align="center">
            
-            <tr style="background-color: #ccc">
-           
-                <td>
-                    <a href="viewProduct.php?pid=<?php echo $row["id_product"];?>">
-                    <img width="150" height="180" src="productImages/<?php echo $row["img_url"];?>">
-                     </a>
-                    </td>
-                <td>
-                       <a href="viewProduct.php?pid=<?php echo $row["id_product"];?>">
-                 
-                    <?php  
-                echo "<h3>".$row["product_name"]."</h3>";
-                echo "<h5>".$row["product_description"]."</h5>";
-                echo "<h3>Price : ".$row["sell_price"]."</h3>";
-                 ?>
-                       </a>
-                 
-        </td>
-            </tr> 
+              <table style="background-color: aquamarine" border="0">
+            <?php
+            $searchProducts = "SELECT * FROM pharmacy_products WHERE name  LIKE '%" . $keyword . "%'";
+            
+            $result = $conn->query($searchProducts);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><img  src="images/<?php echo $row["image"]; ?>" width="200" height="200" ></td>
+                        <td><h5><?php echo "Name:- ". $row["name"]; ?></h5>
+                            <p><?php echo "Description:- ". $row['description']; ?></p>
+                            <p><?php echo "Sell price:- ". $row["sell_price"]; ?></p>
+                            <?php
+                            if ($row['is_active']!= '1') {
           
-            <?php } ?>
-        </table> 
-         </div>
+                            ?>
+                            <p style="color: red">not available</p>
+                            <?php 
+                            }else{?>
+                            <p style="color: red">available</p> <?php 
+                            }?>
+                        </td>
+                        <td><input type="submit" value="Add to cart" /></td>
+                    </tr><br>
+                    <?php
+                }
+            }
+            $conn->close();
+            ?>
+
+        </table>
+        </div>
     </body>
 </html>

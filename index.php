@@ -8,50 +8,33 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link href="css/codefest_css.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
-        <!--iterate table-->
-        <table>
-            <tr style="background-color: blueviolet"><td>No</td>
-                <td>Data</td>
-            </tr>
-             <?php
-           
-         for($i = 1; $i <=10; $i++){
-        ?>
-            <tr>
-                <td><?php  echo $i; ?></td>
-                <td>your data here ! </td>
-            </tr>
-         <?php }
-         ?> 
+     
+     
+        <div class="container" align = "center"> 
+            <h2>Login</h2>
+            <br>
+            <form method="post" action="action/loginAction.php">
+            <table border="0" style="background-color: aqua">  
+                <tr>
+                    <td>Username : </td>
+                    <td><input type="text" name="username" value="" /></td> 
+                </tr> 
+                <tr>
+                    <td>Password : </td>
+                    <td><input type="password" name="password" value="" /></td> 
+                </tr> 
+                
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login" /></td> 
+                </tr> 
         </table>
-        <br>select your Option
-        <select name="happy">
-      <?php   for($i = 1; $i <=20; $i++){  ?>
-            <option><?php echo $i; ?></option> 
-           <?php }  ?>
-            <!--up to 20-->
-        </select>
-        
-        Birthday : <br>
-        Year:<select name="yy">
-      <?php   for($i = 1980; $i <=2021; $i++){  ?>
-            <option><?php echo $i; ?></option> 
-           <?php }  ?>
-            <!--up to 20-->
-        </select>  Month:<select name="mm">
-      <?php   for($i = 1; $i <=12; $i++){  ?>
-            <option><?php echo $i; ?></option> 
-           <?php }  ?>
-            <!--up to 20-->
-        </select>  <select name="dd">
-      <?php   for($i = 1; $i <=31; $i++){  ?>
-            <option><?php echo $i; ?></option> 
-           <?php }  ?>
-            <!--up to 20-->
-        </select> 
-       
-        
+        </form>
+        </div>
+           
+     
     </body>
 </html>
