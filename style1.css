@@ -8,21 +8,20 @@
 }
 .head{
     font-size: 28px;
-    color:whitesmoke;
-    font-family: Broadway;
+    color:#000033;
+    font-family: Colonna MT;
 }
 
-.button2
-{
+.button{
     width: 200px;
     height: 35px;
     text-align: center;
     font-size: 14px;
     font-family: Arial Rounded MT;
-    background-color:whitesmoke;
+    background-color:#00cc00;
     border : none;
     outline: none;
-    color: #009999;
+    color: white;
     border-radius: 50px;
     text-transform: uppercase;
     display: inline-block;
@@ -32,24 +31,24 @@
     
     
 }
-.button2:hover{
+.button:hover{
    
    cursor: pointer;
-   color:whitesmoke;
-   background-color: #006666;
-   border:none;
+   color:#00cc00;
+   background-color: white;
+   border:solid #00cc00;
 }
 
 .button1{
-    margin-top: 27px;
+    margin-top: 30px;
     margin-left: 10px;
-    width: 150px;
+    width: 100px;
     height: 35px;
     text-align: center;
     font-size: 14px;
     font-family: Arial Rounded MT;
     color: white;
-    background-color:#006666;
+    background-color: #000099;
     border : none;
     outline: none;
     border-radius: 50px;
@@ -61,9 +60,9 @@
 .button1:hover{
    
    cursor: pointer;
-   color:#006666;
+   color:#000099;
    background-color: white;
-   border:solid #006666;
+   border:solid #000099;
 }
 
 .txt{
@@ -104,75 +103,58 @@
 }
 .t{
     margin-top: 0;
-    margin-left: 30px;
+    margin-left: 70px;
     
     
 }
 .im1{
     width: 200px;
     height: 200px;
-   margin-left: 0px;
+   margin-left: 100px;
     
 }
 
 .tbl{
-    margin-top: 0;
+    margin-top: -40px;
 }
 
 .header {
   overflow: hidden;
+  background-color: #999999;
   padding: 20px 10px;
-  height: 200px;
-  background-color: #009999;
-  
+  height: 110px;
 }
-
-.button3{
-    width: 400px;
-    height: 400px;
-    padding: 0;
-    border: none;
-    margin-left: 20px;
-    background-color: white;
-    text-align: center;
-    position: relative;
-    border-radius: 30px;
+.slide{
+    margin-top: 10px;
+    width: 1335px;
+    height: 800px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    animation-name:animation1;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
-
-.button3:hover{
-     box-shadow: -5px -5px 5px #ffffff0d,
-    5px 5px 5px #000000a6,
-    10px 10px 10px #000000a6,
-    15px 15px 15px #000000a6,
-    20px 20px 20px #000000a6;
-}
-
-.textb{
-    width: 900px;
-    margin-top: 30px;
-    margin-left: 200px;
-    height: 30px;
-    border: none;
-    outline: none;
+@keyframes animation1{
+    0%{
+         background-image: url("lp1.jpg");
+         }
+    25%{
+         background-image: url("lp2.jpg");
+        }
+    50%{
+         background-image: url("lp8.jpg");
+        }
     
+    75%{
+         background-image: url("lp3.jpg");
+        }
     
+    100%{
+       background-image: url("lp9.jpg"); 
+       }
 }
-.tab{
 
-    width: 100%;
-}
-.tab1{
-    width: 20%;
-    height: 200px;
-    background-color: #ffccff;
-    padding-left: 60px;
-}
-.tab2{
-    background-color: #ff9999;
-    color: #ffccff;
-    padding-left: 50px;
-    font-family: Arial Rounded MT;
-}
 
 
 

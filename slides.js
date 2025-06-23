@@ -1,4 +1,4 @@
-
+/*var x=1;
 
 function b(){
     var y=document.getElementById("asus");
